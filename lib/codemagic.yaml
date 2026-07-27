@@ -1,0 +1,14 @@
+workflows:
+  ios-workflow:
+    name: FitTrack Pro iOS
+
+    environment:
+      flutter: stable
+      xcode: latest
+
+    scripts:
+      - flutter pub get
+      - flutter build ios --release --no-codesign
+
+    artifacts:
+      - build/ios/iphoneos/Runner.app
